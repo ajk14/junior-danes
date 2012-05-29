@@ -1,0 +1,50 @@
+{% extends "site_base.html" %}
+
+{% block title %} Find Your Item {% endblock %}
+
+{% block body%}
+<style type="text/css">
+td {vertical-align:top;}
+.underlined {text-decoration:underline;}
+</style>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  Search Query: <input type="text" name="query"/><br/>
+  Zip Code: <input type="text" name="zip"/><br/>
+  <input type="submit" value="Submit" />
+</form>
+</br>
+<table>
+<tr>
+<td id="categories">
+  {% if categories %}
+  <div class="underlined">Categories</div>
+  {% endif %}
+
+  {% for category, id in categories %}
+  <div id="{{category}}">
+    <input type="checkbox" name="category" id="{{id}}" checked>{{category}}
+  </input>
+  </div>
+  {% endfor %}
+</td>
+<td>
+  {% for item, key, category in items %}
+  <div class="{{category}}"><a href="/p/{{key}}">{{ item }}</a></div>
+  {% endfor %}
+</td>
+</tr>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script>
+{% for category, id in categories %}
+$("#{{id}}").change(function() {
+    if ($("#{{id}}").is(":checked")) $(".{{id}}").show();
+    else $(".{{id}}").hide();
+});
+{% endfor %}
+</script>
+
+{% endblock %}

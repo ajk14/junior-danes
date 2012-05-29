@@ -1,0 +1,14 @@
+{% extends "site_base.html" %}
+
+{% block title %} Junior Danes Baseball Academy {% endblock %}
+
+{% block body%}
+<style type="text/css">
+td {vertical-align:top;}
+.underlined {text-decoration:underline;}
+</style>
+
+
+Hello, world!
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html class="no-js" lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>{% block title %} {% endblock %}</title>
+                <meta name="viewport" content="width=device-width">
+
+        </head>
+
+        <body>
+	  </br></br>
+
+          {% block body %}
+
+          {% endblock %}
+
+        </body>
+</html>
+
+
