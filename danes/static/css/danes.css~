@@ -1,13 +1,17 @@
 body
 {
 	background-color:purple;
-	font-family:sans-serif;
+	font-family:georgia,sans-serif;
 }
 
 
-a:link {color:black; text-decoration:none;}
-a:visited (color:black;}
+a:link {color:black;
+       text-decoration:none
+}
+
+a:visited {color:black;}
 a:hover {color:purple;}
+a:active {color:black;}
 
 table 
 {
@@ -18,14 +22,19 @@ h1
 	color:white;
 }
 
+h2
+{
+	color:black;
+}
+
 h3
 {
-	color:white;
+	color:black;
 }
 
 td 
 {
-	border-radius: 15px;
+	border-radius: 5px;
 	vertical-align:top;
 	background-color:white;
 	padding:10px;
@@ -38,7 +47,7 @@ td
 	
 #top
 {
-	text-align:center;
+	text-align:left;
 }
 
 #menu

@@ -1,7 +1,5 @@
 {% extends "site_base.html" %}
 
-{% block title %} Junior Danes Baseball Academy {% endblock %}
-
 {% block body%}
 <link href="/static/css/danes.css" rel="stylesheet" type="text/css">
 
@@ -18,8 +16,7 @@
 <div class='menu_item'><a href="/showcases/">Showcases</a></div>
 </td>
 <td>
-{% block main %}
-{% end block %}
+{% block main %}{% endblock %}
 </td>
 </tr>
 </table>
