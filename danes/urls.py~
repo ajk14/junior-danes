@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 import os
-SITE
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
