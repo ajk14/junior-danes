@@ -1,11 +1,14 @@
 from django.conf.urls import patterns, include, url
-
+import os
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^$', 'danes.views.home'),
+                       url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+                        {'document_root': os.path.join(SITE_ROOT, 'static')}),
     # Examples:
     # url(r'^$', 'danes.views.home', name='home'),
     # url(r'^danes/', include('danes.foo.urls')),

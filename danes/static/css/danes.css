@@ -1,0 +1,46 @@
+body
+{
+	background-color:purple;
+	font-family:sans-serif;
+}
+
+table 
+{
+}
+
+h1
+{
+	color:white;
+}
+
+h3
+{
+	color:white;
+}
+
+td 
+{
+	border-radius: 15px;
+	vertical-align:top;
+	background-color:white;
+	padding:10px;
+}
+
+.underlined 
+{
+	text-decoration:underline;
+}
+	
+#top
+{
+	text-align:center;
+}
+
+#menu
+{
+	text-align:center;
+	font-size:1.5em;
+	font-weight:bold;
+	width:200px;
+	background-color:yellow;
+}
