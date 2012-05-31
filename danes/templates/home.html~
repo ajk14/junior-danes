@@ -3,5 +3,6 @@
 {% block title %} Junior Danes Baseball Academy {% endblock %}
 
 {% block main %}
+Junior Danes Baseball Academy. Now accepting registrations for our summer baseball skills camp!
 
 {% endblock %}

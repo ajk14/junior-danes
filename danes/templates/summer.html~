@@ -3,7 +3,7 @@
 {% block title %} Junior Danes Baseball Academy {% endblock %}
 
 {% block main %}
-<h3>Junior Danes Baseball Academy Presents:</h3>
+<div id="heading">Junior Danes Baseball Academy Presents:</h3></div>
 <h2>Summer Baseball Skills Camp</h2>
 </div> 
  <div>

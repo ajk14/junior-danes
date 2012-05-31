@@ -2,12 +2,19 @@
 
 {% block body%}
 <link href="/static/css/danes.css" rel="stylesheet" type="text/css">
-
-<div id="top">
-<h1>Junior Danes </br> Baseball Academy</h1>
-</div>
-
 <table>
+<tr>
+<td>
+<div>
+<img id="logo" src="/static/img/logo.jpg">
+</div>
+</td>
+<td>
+<div id="top">
+<h1>Junior Danes </br> Baseball Academy
+</div>
+</td>
+
 <tr>
 <td id='menu'>
 <div class='menu_item'><a href="/">Home</a></div>
@@ -15,7 +22,7 @@
 <div class='menu_item'><a href="/summer/">Summer Camps</a></div>
 <div class='menu_item'><a href="/showcases/">Showcases</a></div>
 </td>
-<td>
+<td id="body">
 {% block main %}{% endblock %}
 </td>
 </tr>

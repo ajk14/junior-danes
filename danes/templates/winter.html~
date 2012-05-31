@@ -7,4 +7,6 @@
 <h2>Winter Baseball Skills Camp</h2>
 </div> 
 
+<div> More Information Coming Soon! </div>
+
 {% endblock %}
