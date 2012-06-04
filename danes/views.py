@@ -16,3 +16,7 @@ def summer(request):
 def showcases(request):
     context = {}
     return render_to_response("showcases.html", context)
+
+def register(request):
+    context = {}
+    return render_to_response("form.html", context)

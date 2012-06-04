@@ -7,6 +7,9 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 urlpatterns = patterns('',
                        url(r'^$', 'danes.views.home'),
+                       url(r'^winter/$', 'danes.views.winter'),
+                       url(r'^summer/$', 'danes.views.summer'),
+                       url(r'^showcases/$', 'danes.views.showcases'),
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
                         {'document_root': os.path.join(SITE_ROOT, 'static')}),
     # Examples:
