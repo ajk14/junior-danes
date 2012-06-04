@@ -11,16 +11,16 @@
 </td>
 <td>
 <div id="top">
-<h1>Junior Danes </br> Baseball Academy
+<h1>Junior Danes </br> Baseball Academy</h1>
 </div>
 </td>
 
 <tr>
-<td id='menu'>
-<div class='menu_item'><a href="/">Home</a></div>
-<div class='menu_item'><a href="/summer/">Summer Camps</a></div>
-<div class='menu_item'><a href="/showcases/">Showcases</a></div>
-<div class='menu_item'><a href="/winter/">Winter Camps</a></div>
+<td id="menu">
+<a href="/" class="classname">Home</a>
+<a href="/summer/" class="classname">Summer Camps</a>
+<a href="/showcases/" class="classname">Showcases</a>
+<a href="/winter/" class="classname">Winter Camps</a>
 </td>
 <td id="body">
 {% block main %}{% endblock %}
