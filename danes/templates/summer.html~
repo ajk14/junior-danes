@@ -3,52 +3,47 @@
 {% block title %} Junior Danes Baseball Academy {% endblock %}
 
 {% block main %}
-<div id="heading">Junior Danes Baseball Academy Presents:</h3></div>
+<div id="heading">Junior Danes Baseball Academy Presents:</div>
 <h2>Summer Baseball Skills Camp</h2>
-</div> 
  <div>
-Join University at Albany Head Baseball Coach Jon Mueller, his staff, and current UAlbany players as they host their first annual summer camp.
+Join the University at Albany Baseball Coaching staff and current UAlbany players as they host their first annual summer camp, located on the University at Albany Campus.
 </div>
-  <h4> CAMP AMENITIES </h4>
-  <li>SAFE/FUN ENVIRONMENT FOR YOUR SON OR DAUGHTER</li>
-  <li>RICH BASEBALL KNOWLEDGE AND EXPERIENCE FROM CAMP WORKERS</li>
-  <li>CAMP INSTRUCTION INDICITIVE TO PLAYERS AGE AND SKILL LEVEL</li>
-  <li>AN EMPHASIS OF THE DAY: EACH DAY WE WILL FOCUS ON ONE SPECIFIC</li>
-  <li>SKILL ESSENTIAL TO CONTINUED BASEBALL SUCCESS</li>
-  <li>ROTATING STATIONS TO ENSURE ALL BASEBALL AREAS ARE COVERED</li>
-  <li>FIVE PITCHING MOUNDS</li>
-  <li>AWARDS FOR OUTSTANDING CAMP PARTICIPATION</li>
-  <li>TRAINER ON SITE</li>
-  <li>TEE SHIRTS FOR ALL CAMPERS</li>
+  <h4>Camp Amenities</h4>
+  <li>Safe and Fun environment for your son or daughter</li>
+  <li>Rich Baseball Knowledge and Experience From Camp Workers</li>
+  <li>Camp Instruction Appropriate for Player Age and Skill Level</li>
+  <li>Emphasis of the day: Each day we will focus on one specific skill essential for continued baseball success</li>
+  <li>Rotating Stations to ensure all Baseball Areas are covered</li>
+  <li>Five Pitching Mounds</li>
+  <li>Awards for Outstanding Camp Participation</li>
+  <li>Trainer on Site</li>
+  <li>T-shirts for all campers</li>
   
-  <h4> CAMP DETAILS </h4>
-<li>AGES 8-12 JULY 9-13</li>
-  <li>AGES 13-18 JULY 16-20</li>
-  <li>BOTH WEEKS WILL RUN FROM 9AM-1PM</li>
-  <li>SPACE IS LIMITED</li>
-  <li>AGE EXCEPTIONS CAN BE MADE FOR SIBLINGS</li>
-  <li>LUNCH WILL NOT BE PROVIDED</li>
-  <li>TEAM RATES ARE AVAILABLE</li>
+  <h4> Camp Details </h4>
+  <li>Ages 8-12: July 9-13</li>
+  <li>Ages 13-18: July 16-20</li>
+  <li>Both Weeks will run from 9AM-1PM daily</li>
+  <li>Space is limited</li>
+  <li>Age exceptions can be made for siblings to attend the same week</li>
+  <li>Lunch will not be provided</li>
+  <li>Team Rates are available</li>
 
-  <h4>CAMP CHECKLIST</h4> 
-  <li>CLOTHING SUITABLE FOR ACITIVITY</li>
-  <li>A GLOVE</li>
-  <li>A BAT (WE WILL HAVE SOME BATS AVAILABLE)</li>
-  <li>A HELMET (WE WILL HAVE SOME </li>
-  <li>BASEBALL CLEATS OR ATHLETIC SHOES </li>
+  <h4>Camp Checklist</h4>
+  <li>Clothing suitable for activity</li>
+  <li>Glove</li>
+  <li>Bat (Some will be available)</li>
+  <li>Helmet (Some will be available)</li>
+  <li>Baseball Cleats or Athletic Shoes</li>
   
-  <h4>MEET CAMP DIRECTOR JEFF KAIER</h4>
-  <li>IS IN HIS FIRST YEAR WITH UALBANY AFTER A FOUR YEAR PLAYING CAREER </li>
-  <li>HE WAS A MEMBER OF THE 2007 NCAA REGIONAL TEAM WHO CAPTURED
-    THE AMERICA EAST CHAMPIONSHIP, THE FIRST AND ONLY TIME IN SCHOOL
-    HISTORY</li>
-  <li>HE LED THE AMERICA EAST CONFERENCE IN PITCHING APPEARANCES
-    DURING THAT SEASON AND SITS THIRD ALL TIME IN UALBANY HISTORY</li>
-  <li>FROM 2006-2011 KAIER WAS THE HEAD COACH OF THE HALFMOON MARINERS
-    SUMMER BASEBALL CONNIE MACK TEAM, AN AFFILIATE OF AABC</li>
-  <li>HE LED THEM TO TWO STATE CHAMPIONSHIPS, INCLUDING AN APPEARANCE
-    IN THE FINAL FOUR OF THE MID ATLANTIC REGIONAL IN 2009</li>
-  <li>KAIER RECEIVED HIS BACHELORS DEGREE FROM UALBANY IN 2009, AND
-    COMPLETED HIS MASTERS IN DECEMBER OF 2011 </li>
+  <h4>Meet Camp Director Jeff Kaier</h4>
+  <li>Kaier Recently completed his first season as an Assistant Baseball Coach with UAlbany after a four-year playing career with UAlbany</li>
+  <li>During his first year the Danes saw significant improvements in the three major statistical areas, Batting Average, Fielding Percentage, and Earned Run Average</li>
+  <li>The 2012 squad also broke the school record with 16 conference wins</li> 
+  <li>Kaier was a member of the 2007 NCAA Regional Team that captured the America East Championship, the only team in school history to do so</li>
+  <li>Kaier led the America East Conference in Pitching Appearances during that season and sits third all-time in UAlbany history in that category</li>
+  <li>Prior to Albany, Kaier was the head coach of the Halfmoon Mariners, a AABC affiliate at both the 16U and 18U levels. During his five years the Mariners Summer Program won two state championships and made an appearance in the final four of the mid-atlantic regional in 2009</li>
+  <li>Kaier Recieved his Bachelor's Degree in Communications from UAlbany in 2009, and completed his Master's Degree in Education Administration in December of 2011</li>
+
+  <h2>To register, please fill out <a class="text" href="/static/img/summer_form.pdf">this form</a> and mail it back to the address indicated!</h2>
 
 {% endblock %}

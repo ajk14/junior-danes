@@ -79,10 +79,13 @@ td
 
 #menu
 {
-	text-align:center;
+	padding:5px;
+	text-align:left;
 	font-family:marlett;
 	font-size:1.5em;
 	font-weight:bold;
 	width:200px;
 	background-color:#F4CF27;
+}
+
 }

@@ -14,6 +14,9 @@ a:visited {color:black;}
 a:hover {color:purple;}
 a:active {color:black;}
 
+a.text{color:blue;
+	text-decoration:underline;}
+
 table 
 {
 }
@@ -21,6 +24,7 @@ table
 h1
 {
 	color:white;
+	font-size:2.5em;
 }
 
 h2
@@ -72,7 +76,7 @@ td
 #top
 {
 	font-family:marlett;
-	padding:10px;
+	padding:5px;
 	text-align:left;
 	background:#5D0B83;
 }
