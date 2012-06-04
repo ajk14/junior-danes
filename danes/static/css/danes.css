@@ -65,7 +65,7 @@ td
 
 #heading 
 {
-	font-family:cursive;
+	font-family:cursive, serif;;
 }
 
 #logo
@@ -75,7 +75,7 @@ td
 }
 #top
 {
-	font-family:marlett;
+	font-family:marlett, sans-serif;
 	padding:5px;
 	text-align:left;
 	background:#5D0B83;
