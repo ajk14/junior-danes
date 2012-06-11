@@ -32,7 +32,7 @@ def register(request):
             context = request.POST.copy()
             context.update(csrf(request))
             token = request.POST['stripeToken']
-            stripe.api_key = 'uFU43ER8LO9AzMNblP3OHSuMsrTIzpRb'
+            stripe.api_key = os.environ['stripe_private']
             try:
                 charge = stripe.Charge.create(
                     amount=20000, # amount in cents
@@ -43,7 +43,7 @@ def register(request):
                 registration_form.save()
                 return render_to_response("success.html", context)
             except CardError as e:
-                context['error-message'] = e.message
+                context['card_error'] = e.message
                 return render_to_response("failure.html", context)
         else: context['invalid'] = True
 

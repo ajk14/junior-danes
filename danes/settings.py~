@@ -1,4 +1,11 @@
 import os
+"""
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST= 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+"""
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # Django settings for danes project.
 
@@ -122,9 +129,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registrations',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging

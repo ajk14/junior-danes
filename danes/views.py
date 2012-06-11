@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from registrations.models import RegistrationForm
-import stripe
+import stripe, os
 from stripe import CardError
 
 def home(request):
@@ -32,7 +32,7 @@ def register(request):
             context = request.POST.copy()
             context.update(csrf(request))
             token = request.POST['stripeToken']
-            stripe.api_key = 'uFU43ER8LO9AzMNblP3OHSuMsrTIzpRb'
+            stripe.api_key = os.environ['stripe_private']
             try:
                 charge = stripe.Charge.create(
                     amount=20000, # amount in cents
