@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Junior Danes Summer Camp Confirmation{% endblock %}
+
+{% block main %}
+<h2>Congratulations!</h2>
+<div>You may wish to print this page for your records.</div>
+<div>A confirmation e-mail has been sent to you at {{email}}.</div> 
+<div>Total Charge: $200.00</div>
+
+<h3>Camp Dates</h3> 
+{% ifequal campDates "1" %}
+July 9-13 (Ages 8-12)
+{% else %}
+July 16-20 (Ages 13-18)
+{% endifequal %}
+</h3>
+
+<h3>Camper Info</h3>
+<div>Name: {{firstName}} {{lastName}} </div>
+<div>Address: {{address}}, {{city}}, {{state}}, {{zip}}</div>
+<div>Height: {{height}}</div>
+<div>Age: {{age}}
+
+<h3>Parent Info</h3>
+<div>Name: {{parentName}}</div>
+<div>Home Phone: {{phone}}</div>
+<div>Cell Phone: {{cell}}</div>
+<div>E-mail: {{email}}</div>
+
+<h3>Emergency Contact Info</h3>
+<div>Name: {{emergencyName}}</div>
+<div>Phone: {{emergencyContact}}</div>
+<div>Relationship: {{relationship}}</div>
+
+{% endblock %}

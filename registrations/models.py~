@@ -1,0 +1,40 @@
+from django.db import models
+from django.forms import ModelForm, Textarea, TextInput
+from django.contrib.localflavor.us.forms import USPhoneNumberField, USStateField, USZipCodeField, USStateSelect
+from django.contrib.localflavor.us.models import PhoneNumberField
+from django.contrib.localflavor.us.models import *
+
+
+class Registration(models.Model):
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    height = models.CharField(max_length=20)
+    age = models.IntegerField()
+    email = models.EmailField()
+    position = models.CharField(max_length=50)
+    address = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = USStateField()
+    zip = models.CharField(max_length=5)
+    phone = PhoneNumberField()
+    cell = USPhoneNumberField()
+    parentName = models.CharField(max_length=200)
+    emergencyContact = USPhoneNumberField()
+    emergencyName = models.CharField(max_length=200)
+    relationship = models.CharField(max_length=100)
+
+class RegistrationForm(ModelForm):
+    class Meta:
+        model = Registration
+        widgets = {
+            'state':USStateSelect(),
+            'firstName':TextInput(attrs={'placeholder': 'First'}),
+            'lastName':TextInput(attrs={'placeholder': 'Last'}),
+            'address':TextInput(attrs={'placeholder': 'Street'}),
+            'city':TextInput(attrs={'placeholder': 'City'}),
+            'zip':TextInput(attrs={'placeholder': 'Zip'}),
+            'parentName':TextInput(attrs={'placeholder': 'Parent Name'}),
+            'emergencyName':TextInput(attrs={'placeholder': 'Emergency Contact Name'}),
+            'relationship':TextInput(attrs={'placeholder': 'Relationship'}),
+            'phone':USPhoneNumberField(),
+        }

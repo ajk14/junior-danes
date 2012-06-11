@@ -1,23 +1,158 @@
 {% extends "base.html" %}
 
-{% block title %} Winter Skills Camps {% endblock %}
+{% block title %}Junior Danes Summer Camp Registration{% endblock %}
 
 {% block main %}
-<form action="" method="POST" id="payment-form">
-    <div class="form-row">
-        <label>Card Number</label>
-        <input type="text" size="20" autocomplete="off" class="card-number"/>
-    </div>
-    <div class="form-row">
-        <label>CVC</label>
-        <input type="text" size="4" autocomplete="off" class="card-cvc"/>
-    </div>
-    <div class="form-row">
-        <label>Expiration (MM/YYYY)</label>
-        <input type="text" size="2" class="card-expiry-month"/>
-        <span> / </span>
-        <input type="text" size="4" class="card-expiry-year"/>
-    </div>
-    <button type="submit" class="submit-button">Submit Payment</button>
-</form>
+TEST PURPOSES ONLY!!!
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/stripeHandler.js"></script>
+
+   <h2>Junior Danes Summer Camp Registration</h2>
+   <div>If you would rather pay by check, please fill out <a class="text" href="/static/img/summer_form.pdf">this form</a> and mail it to the address on the form. </div>
+
+   <form action="" method="POST" id="payment-form">
+     <h3>Camp Dates</h3>
+     <select name="campDates">
+       <option value="1">Ages 8-12, July 9-13</option>
+       <option value="2">Ages 13-18, July 16-20</option>
+     </select>
+     
+     <h3>Registration</h3>
+     {% csrf_token %}     
+     {% if invalid %}
+     <div class="error">Please correct the following errors (your card has not been charged):</div>
+     <div id="error_list">
+       {% if registration_form.firstName.errors %}
+       <li>First name is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.lastName.errors %}
+       <li>Last name is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.address.errors %}
+       <li>Street Address is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.city.errors %}
+       <li>City is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.state.errors %}
+       <li>Please select a state.</li>
+       {% endif %}
+       {% if registration_form.zip.errors %}
+       <li>Zip code is invalid or missing. Please use 5-digit zip code.</li>
+       {% endif %}
+       {% if registration_form.age.errors %}
+       <li>Age is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.height.errors %}
+       <li>Height is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.position.errors %}
+       <li>Position is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.parentName.errors %}
+       <li>Parent name is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.phone.errors %}
+       <li>Phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+       {% endif %}
+       {% if registration_form.cell.errors %}
+       <li>Cell phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+       {% endif %}
+       {% if registration_form.email.errors %}
+       <li>E-mail is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.emergencyName.errors %}
+       <li>Emergency name is invalid or missing</li>
+       {% endif %}
+       {% if registration_form.emergencyContact.errors %}
+       <li>Emergency phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+       {% endif %}
+       {% if registration_form.relationship.errors %}
+       <li>Emergency contact relationship is invalid or missing.</li>
+       {% endif %}     
+</div>
+</br>
+    {% endif %}
+     {{ registration_form.non_field_errors }}
+     
+          <div class='field_label'>Camper Name</div>
+	  <div>
+            {{ registration_form.firstName }}
+            {{ registration_form.lastName }}
+	  </div>
+	  </br>
+          <div class='field_label'>Address</div>
+          <div>
+          {{ registration_form.address }}
+          {{ registration_form.city }}
+	  {{ registration_form.state }}
+          {{ registration_form.zip }}
+          </div>
+	  </br>
+          <div class='field_label'>Camper Info</div>
+          <div>
+          {{ registration_form.age }}
+          {{ registration_form.height}}
+          {{ registration_form.position}}
+	  </div>
+	  </br>
+          <div class='field_label'>Parent Info</div>
+	  <div>
+	  {{ registration_form.parentName }}
+	  {{ registration_form.phone}}
+	  {{ registration_form.cell}}
+	  {{ registration_form.email }}
+	  </div>
+	  </br>
+	  <div class='field_label'>Emergency Contact Info</div>
+          <div>
+	  {{ registration_form.emergencyName }}	 
+	  {{ registration_form.emergencyContact }}
+	  {{ registration_form.relationship }}
+	  </div>
+	  
+	  <h3>Payment Info</h3>
+	  <!-- to display errors returned by createToken -->
+	  <div class="payment-errors"></div>
+	  <div class='field_label'>Carholder Name</div>
+	  <div>
+            <input type="text" size="20" autocomplete="off" class="card-name" />
+          </div>
+	  </br>
+	  <div class='field_label'>Card Type</div>
+	  <div>
+	    <select class="card-type">
+	      <option value="------">------</option>
+	      <option value="Visa">Visa</option>
+	      <option value="MasterCard">MasterCard</option>
+	      <option value="American Express">American Express</option>
+	      <option value="Discover">Discover</option>
+	      <option value="Diners Club">Diners Club</option>
+	      <option value="JCB">JCB</option>
+            </select>
+	  </div>
+	  </br>
+	  <div class='field_label'>Card Number</div>
+          <div>
+	    <input type="text" size="20" autocomplete="off" class="card-number" />
+          </div>
+	  </br>
+	  <div class='field_label'>CVC</div>
+          <div>
+	    <input type="text" size="4" autocomplete="off" class="card-cvc" />
+          </div>
+	  </br>
+	  <div class='field_label'>Expiration (MM/YYYY)</div>
+	  <div>
+	  <input type="text" size="2" class="card-expiry-month"/>
+	  <span> / </span>
+	  <input type="text" size="4" class="card-expiry-year"/>
+	  </div>
+	  </br>
+	  <h3>Cost</h3>
+	  <div class="field_label">Total: $200.00</div>
+	  </br>
+	  <button type="submit" class="submit-button">Submit Payment</button>
+	</form>
 {% endblock %}

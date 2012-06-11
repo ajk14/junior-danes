@@ -94,6 +94,35 @@ td
 	text-decoration:underline;
 }
 
+.field_label
+{
+	font-family:sans-serif;
+}
+
+.payment-error-title
+{
+	display:none;
+        font-weight:bold;
+        color:red;
+}
+
+.error
+{
+	font-weight:bold;
+	color:red;
+}
+
+.error_field
+{
+	border-color:red;
+}
+
+.payment-error,
+#error_list
+{
+	color:red;
+}
+
 #heading 
 {
 	font-family:cursive, serif;

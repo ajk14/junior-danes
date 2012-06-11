@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Registration Failed{% endblock %}
+
+{% block main %}
+<h2>We're Sorry.</h2>
+<div>We were unable to process your request for the following reason:</div>
+<li>{{card_error}}</li>
+<div>Please try again using a different card.</div> 
+<div>Your credit card has not been charged.</div>
+</br>
+<div>If you continue to have difficulties, please contact our baseball office directly at 442-3337.
+{% endblock %}
