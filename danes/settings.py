@@ -1,10 +1,10 @@
 import os
 
-EMAIL_HOST_USER = 'akaier@princeton.edu'
+EMAIL_HOST_USER = 'junior_danes'
 EMAIL_HOST= 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = '12a1980'
+EMAIL_HOST_PASSWORD = 'mueller2012'
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # Django settings for danes project.
