@@ -123,6 +123,33 @@ td
 	color:red;
 }
 
+.clear {
+       clear:both;
+}
+
+.input_box {
+	   float:left;
+           margin-right:20px;
+}
+
+.input_exp {
+           float:left;
+           margin-right:0px;
+}
+
+
+.input_last {
+	    foat:left;
+}
+
+input, label {
+           display:block;	
+}
+
+.card-expiry-month, card-expiry-year {
+	    display:inline;
+}
+
 #heading 
 {
 	font-family:cursive, serif;

@@ -21,7 +21,7 @@ TEST PURPOSES ONLY!!!
      <h3>Registration</h3>
      {% csrf_token %}     
      {% if invalid %}
-     <div class="error">Please correct the following errors (your card has not been charged):</div>
+     <div class="error">Please correct the following error(s) (your card has not been charged):</div>
      <div id="error_list">
        {% if registration_form.firstName.errors %}
        <li>First name is invalid or missing.</li>
@@ -114,7 +114,8 @@ TEST PURPOSES ONLY!!!
 	  
 	  <h3>Payment Info</h3>
 	  <!-- to display errors returned by createToken -->
-	  <div class="payment-errors"></div>
+	  <div class="payment-error-title">Please correct the following error(s) (your card has not been charged):</div>
+	  <div class="payment-error"></div>
 	  <div class='field_label'>Carholder Name</div>
 	  <div>
             <input type="text" size="20" autocomplete="off" class="card-name" />
