@@ -1,0 +1,1 @@
+testvar='1234';export testvar 
