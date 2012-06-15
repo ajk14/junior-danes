@@ -54,7 +54,9 @@ def register(request):
             except CardError as e:
                 context['card_error'] = e.message
                 return render_to_response("failure.html", context)
-        else: context['invalid'] = True
+        else: 
+            print "FORM WAS INVALID"
+            context['invalid'] = True
 
     context['registration_form'] = registration_form
     return render_to_response("form.html", context)

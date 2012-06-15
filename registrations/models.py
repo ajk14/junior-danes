@@ -22,7 +22,6 @@ class Registration(models.Model):
     emergencyContact = PhoneNumberField()
     emergencyName = models.CharField(max_length=200)
     relationship = models.CharField(max_length=100)
-    campDates = models.IntegerField()
 
 class RegistrationForm(ModelForm):
     class Meta:
