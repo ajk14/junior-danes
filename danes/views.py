@@ -26,6 +26,7 @@ def showcases(request):
 def register(request):
     context = {}
     context['invalid'] = False
+    context['STRIPE_PUBLIC'] = os.environ['STRIPE_PUBLIC']
     context.update(csrf(request))
     registration_form = RegistrationForm()
     if request.method == "POST":
