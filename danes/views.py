@@ -37,7 +37,7 @@ def register(request):
             stripe.api_key = os.environ['STRIPE_SECRET']
             try:
                 charge = stripe.Charge.create(
-                    amount=20000, # amount in cents
+                    amount=200, # amount in cents
                     currency="usd",
                     card=token,
                     description=request.POST['firstName']+request.POST['lastName']

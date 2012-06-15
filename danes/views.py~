@@ -43,10 +43,12 @@ def register(request):
                     description=request.POST['firstName']+request.POST['lastName']
                     )
                 SUBJECT = "Junior Danes Baseball Academy Registration Confirmation"
-                MESSAGE = "Hello, \r\n This message confirms " + request.POST['firstName'] + " " + request.POST['lastName'] + "'s enrollment in the Junior Danes Baseball Summer Camp. \r\n\r\n TOTAL PRICE:$200.00 \r\n\r\n Thanks,\r\n Jeff Kaier \r\n Camp Director"
                 FROM = "Junior Danes Baseball <confirmation@juniordanesbaseballacademy.com>"
                 MESSAGE = render_to_string('email.txt', context)
-                send_mail(SUBJECT, MESSAGE, FROM, [request.POST['email']], fail_silently=False)
+                CUSTOMER = [request.POST['email']]
+                DIRECTOR = ['jkaier@albany.edu']
+                send_mail(SUBJECT, MESSAGE, FROM, CUSTOMER, fail_silently=False)
+                send_mail(SUBJECT, MESSAGE, FROM, DIRECTOR, fail_silently=False)
                 registration_form.save()
                 return render_to_response("success.html", context)
             except CardError as e:

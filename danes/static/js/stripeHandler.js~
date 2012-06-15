@@ -6,8 +6,8 @@ function stripeResponseHandler(status, response) {
 	// re-enable the submit button
 	$('.submit-button').removeAttr("disabled");
 	// show the errors on the form
-	$(".payment-errors-title").show();
-	$(".payment-errors").html(response.error.message + "</div><div></br>");
+	$(".payment-error-title").show();
+	$(".payment-error").html("<li>" + response.error.message + "</li></br>");
     } else {
 	var form$ = $("#payment-form");
 	// token contains id, last4, and card type
@@ -28,7 +28,8 @@ $(document).ready(function() {
                         number: $('.card-number').val(),
 			    cvc: $('.card-cvc').val(),
 			    exp_month: $('.card-expiry-month').val(),
-			    exp_year: $('.card-expiry-year').val()
+			    exp_year: $('.card-expiry-year').val(),
+			    name: $('.card-name').val()
 			    }, stripeResponseHandler);
 		return false; // submit from callback
 	    });

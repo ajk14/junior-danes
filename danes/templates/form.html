@@ -3,23 +3,19 @@
 {% block title %}Junior Danes Summer Camp Registration{% endblock %}
 
 {% block main %}
-TEST PURPOSES ONLY!!!
 <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/stripeHandler.js"></script>
 
    <h2>Junior Danes Summer Camp Registration</h2>
-   <div>If you would rather pay by check, please fill out <a class="text" href="/static/img/summer_form.pdf">this form</a> and mail it to the address on the form. </div>
+   <div>If you would rather pay by check, please fill out <a class="text" href="/static/img/summer_form.pdf">this form</a> and mail it to our office. </div>
 
    <form action="" method="POST" id="payment-form">
-     <div>
      <h3>Camp Dates</h3>
-     <select name="campDates">
-       <option value="1">Ages 8-12, July 9-13</option>
-       <option value="2">Ages 13-18, July 16-20</option>
-     </select>
+     <div>
+       July 16-20, Ages 8-18 </br>
+       9AM-1PM
      </div>
-     <br class="clear"/>
      
      <h3>Camper Info</h3>
      {% csrf_token %}     
@@ -215,11 +211,11 @@ TEST PURPOSES ONLY!!!
 	  <div>Expiration Date (MM/YYYY)</div>
 	  <div class='input_exp'>
 	    <label for="cvc"></label>
-	    <input type="text" size="2" class="card-expiry-month"/><span>&nbsp;/&nbsp;</span> 
+	    <input type="text" size="2" autocomplete="off" class="card-expiry-month"/><span>&nbsp;/&nbsp;</span> 
 	  </div>
 	  <div class='input_last'>
 	    <label for="cvc"></label>
-	    <input type="text" size="4" class="card-expiry-year"/>
+	    <input type="text" size="4" autocomplete="off" class="card-expiry-year"/>
 	  </div>
 	  </div>
 	  </br>

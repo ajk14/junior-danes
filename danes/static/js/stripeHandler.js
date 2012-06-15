@@ -1,5 +1,5 @@
 // this identifies your website in the createToken call below
-Stripe.setPublishableKey('pk_8x1k5RZTkTbgOimu6Ga7bGQqqA7Gp');
+Stripe.setPublishableKey({{STRIPE_PUBLIC}});
 
 function stripeResponseHandler(status, response) {
     if (response.error) {
@@ -28,7 +28,8 @@ $(document).ready(function() {
                         number: $('.card-number').val(),
 			    cvc: $('.card-cvc').val(),
 			    exp_month: $('.card-expiry-month').val(),
-			    exp_year: $('.card-expiry-year').val()
+			    exp_year: $('.card-expiry-year').val(),
+			    name: $('.card-name').val()
 			    }, stripeResponseHandler);
 		return false; // submit from callback
 	    });

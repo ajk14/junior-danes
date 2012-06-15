@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Junior Danes Baseball Academy {% endblock %}
 {% block main %}
-Junior Danes Baseball Academy. Now accepting registrations for our summer baseball skills camp!
+<h2>Junior Danes Baseball Academy is now accepting registrations for our summer baseball skills camp!</h2>
+</br>
+Please <a class="text" href="/static/img/summer_form.pdf">Click Here</a> to register for our summer camp, or <a class="text" href="/summer">Click Here</a> for more info.
 {% endblock %}
