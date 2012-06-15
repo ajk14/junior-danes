@@ -31,14 +31,13 @@ def register(request):
     if request.method == "POST":
         registration_form = RegistrationForm(request.POST)
         if registration_form.is_valid():
-            print "FORM VALID"
             context = request.POST.copy()
             context.update(csrf(request))
             token = request.POST['stripeToken']
             stripe.api_key = os.environ['STRIPE_SECRET']
             try:
                 charge = stripe.Charge.create(
-                    amount=200, # amount in cents
+                    amount=20000, # amount in cents
                     currency="usd",
                     card=token,
                     description=request.POST['firstName']+request.POST['lastName']
@@ -56,7 +55,6 @@ def register(request):
                 context['card_error'] = e.message
                 return render_to_response("failure.html", context)
         else: 
-            print "FORM WAS INVALID"
             context['invalid'] = True
 
     context['registration_form'] = registration_form

@@ -31,6 +31,7 @@ def register(request):
     if request.method == "POST":
         registration_form = RegistrationForm(request.POST)
         if registration_form.is_valid():
+            print "FORM VALID"
             context = request.POST.copy()
             context.update(csrf(request))
             token = request.POST['stripeToken']
