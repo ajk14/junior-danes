@@ -1,6 +1,68 @@
+{% autoescape off %}
+
 Hello,
 
-How are you today? Nice to hear from you.
+This message is to confirm the enrollment of {{firstName}} {{lastName}} in the Junior Danes Summer Baseball Camp.
+
+TOTAL COST: $200.00
+
+If the below information is incorrect, please contact our office at (518)442-3337. 
+
+------------------CAMP DATES------------------
+
+{% ifequal campDates "1" %}
+July 9-13 (Ages 8-12), 9AM-1PM
+{% else %}
+July 16-20 (Ages 13-18), 9AM-1PM
+{% endifequal %}
+
+
+-----------------CAMPER INFO------------------
+
+Name: {{firstName}} {{lastName}} 
+
+Address: {{address}}, {{city}}, {{state}}, {{zip}}
+
+Height: {{height}}
+
+Age: {{age}}
+
+
+-----------------PARENT INFO-----------------
+
+Name: {{parentName}}
+
+Home Phone: {{phone}}
+
+Cell Phone: {{cell}}
+
+E-mail: {{email}}
+
+
+------------EMERGENCY CONTACT INFO-----------
+
+Name: {{emergencyName}}
+
+Phone: {{emergencyContact}}
+
+Relationship: {{relationship}}
+
+---------------------------------------------
+
+We look forward to seeing you on {% ifequal campDates "1" %}
+July 9 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+{% else %}
+July 16 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+{% endifequal %}
+
 
 Regards,
-Andy K.
+
+Jeff Kaier
+
+Camp Director
+
+jkaier@albany.edu
+
+{% endautoescape %}
+

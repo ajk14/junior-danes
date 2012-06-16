@@ -10,11 +10,7 @@ If the below information is incorrect, please contact our office at (518)442-333
 
 ------------------CAMP DATES------------------
 
-{% ifequal campDates "1" %}
-July 9-13 (Ages 8-12), 9AM-1PM
-{% else %}
-July 16-20 (Ages 13-18), 9AM-1PM
-{% endifequal %}
+July 16-20 (Ages 8-18), 9AM-1PM
 
 
 -----------------CAMPER INFO------------------
@@ -49,11 +45,8 @@ Relationship: {{relationship}}
 
 ---------------------------------------------
 
-We look forward to seeing you on {% ifequal campDates "1" %}
-July 9 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
-{% else %}
-July 16 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
-{% endifequal %}
+We look forward to seeing you on July 16 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+
 
 
 Regards,
