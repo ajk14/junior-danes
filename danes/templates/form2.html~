@@ -209,21 +209,6 @@
           </div>
 	  </br>
 	  <div>Expiration Date (MM/YYYY)</div>
-<select name="month" id="month">
-  <option value="1">1 - January</option>
-  <option value="2">2 - February</option>
-  <option value="3">3 - March</option>
-  <option value="4">4 - April</option>
-  <option value="4">5 - May</option>
-  <option value="4">6 - June</option>
-  <option value="4">7 - July</option>
-  <option value="4">4 </option>
-  <option value="4">4 - April</option>
-  <option value="4">4 - April</option>
-  <option value="4">4 - April</option>
-  <option value="4">4 - April</option>
-</select>
-
 	  <div class='input_exp'>
 	    <label for="cvc"></label>
 	    <input type="text" size="2" autocomplete="off" class="card-expiry-month"/><span>&nbsp;/&nbsp;</span> 
