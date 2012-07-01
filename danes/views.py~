@@ -35,10 +35,9 @@ def showregister(request):
             context.update(csrf(request))
             token = request.POST['stripeToken']
             stripe.api_key = os.environ['STRIPE_SECRET']
-            stripe.api_key = 'uFU43ER8LO9AzMNblP3OHSuMsrTIzpRb'
             try:
                 charge = stripe.Charge.create(
-                    amount=12500, # amount in cents                              
+                    amount=200, # amount in cents                              
                     currency="usd",
                     card=token,
                     description=request.POST['firstName']+request.POST['lastName']
