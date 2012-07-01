@@ -1,0 +1,67 @@
+{% autoescape off %}
+
+Hello,
+
+This message is to confirm the enrollment of {{firstName}} {{lastName}} in the upcoming UAlbany Baseball Prospect Showcase. Please bring a copy of this e-mail to the showcase.
+
+TOTAL COST: $125.00
+
+If the below information is incorrect, please contact our office at (518)442-3337. 
+
+------------------CAMP DATES------------------
+
+August {{dates}}, 2012, 11AM
+
+
+-----------------CAMPER INFO------------------
+
+Name: {{firstName}} {{lastName}} 
+
+Address: {{address}}, {{city}}, {{state}}, {{zip}}
+
+Height: {{height}}
+
+Weight: {{weight}}
+
+Age: {{age}}
+
+School: {{school}}
+
+Graduation Year: {{gradYear}}
+
+
+-----------------PARENT INFO-----------------
+
+Name: {{parentName}}
+
+Home Phone: {{phone}}
+
+Cell Phone: {{cell}}
+
+E-mail: {{email}}
+
+
+------------EMERGENCY CONTACT INFO-----------
+
+Name: {{emergencyName}}
+
+Phone: {{emergencyContact}}
+
+Relationship: {{relationship}}
+
+---------------------------------------------
+
+We look forward to seeing you on August {{dates}} at 11AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+
+
+
+Regards,
+
+Jeff Kaier
+
+Camp Director
+
+jkaier@albany.edu
+
+{% endautoescape %}
+

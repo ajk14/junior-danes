@@ -11,6 +11,7 @@ urlpatterns = patterns('',
                        url(r'^summer/$', 'danes.views.summer'),
                        url(r'^showcases/$', 'danes.views.showcases'),
                        url(r'^register/$', 'danes.views.register'),
+                       url(r'^showcases/register/$', 'danes.views.showregister'),
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
                         {'document_root': os.path.join(SITE_ROOT, 'static')}),
     # Examples:

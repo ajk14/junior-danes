@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}UAlbany Baseball Prospect Showcase Registration{% endblock %}
+
+{% block main %}
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/stripeHandler.js"></script>
+
+   <h2>UAlbany Baseball Prospect Showcase Registration</h2>
+   <div>If you would rather pay by check, please fill out <a class="text" href="/static/img/showcase_form.pdf">this form</a> and mail it to our office. </div>
+
+   <form action="" method="POST" id="payment-form">
+     
+     <h3>Showcase Date</h3>
+     {% if invalid %}
+     <div class="error">Please correct the following error(s) (your card has not 
+       been charged):</div>
+     <div id="error_list">
+       {% if registration_form.dates.errors %}
+       <li>Please Select a Date.</li>
+       {% endif %}
+     </div>
+     {% endif %}
+     <select name="dates">
+       <option>------</option>
+       <option value="25">August 25, 2012</option>
+       <option value="26">August 26, 2012</option>
+     </select>
+
+     <h3>Player Info</h3>
+     {% csrf_token %}     
+     {% if invalid %}
+     <div class="error">Please correct the following error(s) (your card has not been charged):</div>
+     <div id="error_list">
+       {% if registration_form.firstName.errors %}
+       <li>First name is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.lastName.errors %}
+       <li>Last name is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.address.errors %}
+       <li>Street Address is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.city.errors %}
+       <li>City is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.state.errors %}
+       <li>Please select a state.</li>
+       {% endif %}
+       {% if registration_form.zip.errors %}
+       <li>Zip code is invalid or missing. Please use 5-digit zip code.</li>
+       {% endif %}
+       {% if registration_form.age.errors %}
+       <li>Age is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.height.errors %}
+       <li>Height is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.weight.errors %}
+       <li>Weight is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.position.errors %}
+       <li>Position is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.school.errors %}
+       <li>School is invalid or missing.</li>
+       {% endif %}
+       {% if registration_form.gradYear.errors %}
+       <li>Graduation Year is invalid or missing.</li>
+       {% endif %}
+</div>
+</br>
+    {% endif %}
+     {{ registration_form.non_field_errors }}
+
+    <section>
+    <div class="input_box">
+        <label for="firstName">First Name</label>
+        {{ registration_form.firstName }}
+    </div>
+    <div class="input_last">
+        <label for="lastName">Last Name</label>
+	{{ registration_form.lastName }}
+    </div>
+    <br class="clear"/>
+    </section>
+
+    <section>
+    <div class="input_box">
+        <label for="address">Address</label>
+        {{ registration_form.address }}
+    </div>
+    <div class="input_box">
+        <label for="city">City</label>
+        {{ registration_form.city }}
+    </div>
+    <div class="input_box">
+        <label for="state">State</label>
+        {{ registration_form.state }}
+    </div>
+    <div class="input_last">
+        <label for="zip">Zip</label>
+        {{ registration_form.zip }}
+    </div>
+    <br class="clear"/>
+    </section>
+
+    <section>
+    <div class="input_box">
+        <label for="age">Age</label>
+        {{ registration_form.age }}
+    </div>
+    <div class="input_box">
+        <label for="height">Height</label>
+        {{ registration_form.height }}
+    </div>
+    <div class="input_box">
+        <label for="weight">Weight</label>
+        {{ registration_form.weight }}
+    </div>
+    <div class="input_last">
+        <label for="position">Position(s)</label>
+        {{ registration_form.position }}
+    </div>
+
+    <br class="clear"/>
+    </section>
+
+    <section>
+    <div class="input_box">
+        <label for="school">School</label>
+        {{ registration_form.school }}
+    </div>
+    <div class="input_box">
+        <label for="gradYear">Graduation Year</label>
+        {{ registration_form.gradYear }}
+    </div>
+    <div class="input_box">
+        <label for="bats">Bats</label>
+	<select name="bats">
+              <option value="Right">Right</option>
+	      <option value="Left">Left</option>
+	      <option value="Switch">Switch</option>
+	</select>
+    </div>
+    <div class="input_last">
+        <label for="throws">Throws</label>
+        <select name="throws">
+	  <option value="Right">Right</option>
+	  <option value="Left">Left</option>
+	</select>
+    </div>
+    
+    <br class="clear"/>
+    </section>
+
+    <h3>Parent Info</h3>
+    {% if invalid %}
+    <div class="error">Please correct the following error(s) (your card has not been charged):</div>
+    <div id="error_list">
+      {% if registration_form.parentName.errors %}
+      <li>Parent name is invalid or missing.</li>
+      {% endif %}
+      {% if registration_form.phone.errors %}
+      <li>Phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+      {% endif %}
+      {% if registration_form.cell.errors %}
+      <li>Cell phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+      {% endif %}
+      {% if registration_form.email.errors %}
+      <li>E-mail is invalid or missing.</li>
+      {% endif %}
+    </div>
+    </br>
+    {% endif %}
+
+
+    <section>
+    <div class="input_box">
+        <label for="parentName">Parent Name</label>
+        {{ registration_form.parentName }}
+    </div>
+    <div class="input_box">
+        <label for="phone">Home Phone</label>
+        {{ registration_form.phone }}
+    </div>
+    <div class="input_box">
+        <label for="cell">Cell Phone</label>
+        {{ registration_form.cell }}
+    </div>
+    <div class="input_last">
+        <label for="email">E-mail</label>
+        {{ registration_form.email }}
+    </div>
+    <br class="clear"/>
+    </section>
+
+    <h3>Emergency Contact Info</h3>
+    {% if invalid %}
+    <div class="error">Please correct the following error(s) (your card has not been charged):</div>
+    <div id="error_list">
+      {% if registration_form.emergencyName.errors %}
+      <li>Emergency name is invalid or missing</li>
+      {% endif %}
+      {% if registration_form.emergencyContact.errors %}
+      <li>Emergency phone number is invalid or missing. Please use XXX-XXX-XXXX format.</li>
+      {% endif %}
+      {% if registration_form.relationship.errors %}
+      <li>Emergency contact relationship is invalid or missing.</li>
+      {% endif %}
+    </div>
+    </br>
+    {% endif %}
+    <section>
+    <div class="input_box">
+        <label for="emergencyName">Name</label>
+        {{ registration_form.emergencyName }}
+    </div>
+    <div class="input_box">
+        <label for="emergencyContact">Phone</label>
+        {{ registration_form.emergencyContact }}
+    </div>
+    <div class="input_last">
+        <label for="relationship">Relationship</label>
+        {{ registration_form.relationship }}
+    </div>
+    <br class="clear"/>
+    </section>
+	  
+	  <h3>Payment Info</h3>
+	  <!-- to display errors returned by createToken -->
+	  <div class="payment-error-title">Please correct the following error(s) (your card has not been charged):</div>
+	  <div class="payment-error"></div>
+	  <div>
+	    <label for="cardholder">Cardholder Name</label>
+            <input type="text" size="20" autocomplete="off" class="card-name" placeholder="Name"/>
+          </div>
+	  </br>
+	  <div>
+	    <label for="cardType">Card Type</label>
+	    <select class="card-type">
+	      <option value="------">------</option>
+	      <option value="Visa">Visa</option>
+	      <option value="MasterCard">MasterCard</option>
+	      <option value="American Express">American Express</option>
+	      <option value="Discover">Discover</option>
+	      <option value="Diners Club">Diners Club</option>
+	      <option value="JCB">JCB</option>
+            </select>
+	  </div>
+	  </br>
+
+          <div>
+	    <label for="cardNumber">Card Number</label>
+	    <input type="text" size="20" autocomplete="off" class="card-number" placeholder="Number"/>
+          </div>
+	  </br>
+          <div>
+	    <label for="cvc">CVC</label>
+	    <input type="text" size="4" autocomplete="off" class="card-cvc" placeholder="CVC"/>
+          </div>
+	  </br>
+	  <div>Expiration Date (Month/Year)</div>
+<select class="card-expiry-month"><option value="1">1 - January</option><option value="2">2 - February</option><option value="3">3 - March</option><option value="4">4 - April</option><option value="5">5 - May</option><option value="6">6 - June</option><option value="7">7 - July</option><option value="8">8 - August</option><option value="9">9 - September</option><option value="10">10 - October</option><option value="11">11 - November</option><option value="12">12 - December</option></select>
+<select class="card-expiry-year"><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option></select>
+
+	  </br>
+	  <h3>Cost</h3>
+	  <label>Total: $125.00</label>
+	  </br>
+	  <button type="submit" class="submit-button">Submit Payment</button>
+	</form>
+{% endblock %}
