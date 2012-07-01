@@ -40,7 +40,7 @@ def showregister(request):
                     amount=12500, # amount in cents                              
                     currency="usd",
                     card=token,
-                    description=request.POST['firstName']+request.POST['lastName']
+                    description="Showcase Registration: " + request.POST['firstName']+ " " + request.POST['lastName']
                     )
                 SUBJECT = "UAlbany Baseball Prospect Showcase Registration Confirmation"
                 FROM = "UAlbany Baseball <confirmation@juniordanesbaseballacademy.com>"
@@ -77,7 +77,7 @@ def register(request):
                     amount=20000, # amount in cents
                     currency="usd",
                     card=token,
-                    description=request.POST['firstName']+request.POST['lastName']
+                    description="Camp Registration: " + request.POST['firstName']+ " " + request.POST['lastName']
                     )
                 SUBJECT = "Junior Danes Baseball Academy Registration Confirmation"
                 FROM = "Junior Danes Baseball <confirmation@juniordanesbaseballacademy.com>"
