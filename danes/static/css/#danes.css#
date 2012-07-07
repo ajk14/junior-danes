@@ -87,15 +87,12 @@ td
 .center
 {
 	text-align:center;
-
 }
 
 .italic
 {
-	text-align:center;
-	font-style:italic;
+	
 }
-
 .underlined 
 {
 	text-decoration:underline;

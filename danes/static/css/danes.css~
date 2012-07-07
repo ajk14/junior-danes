@@ -87,8 +87,14 @@ td
 .center
 {
 	text-align:center;
+
+}
+
+.italic
+{
 	font-style:italic;
 }
+
 .underlined 
 {
 	text-decoration:underline;
@@ -97,6 +103,13 @@ td
 .field_label
 {
 	font-family:sans-serif;
+}
+
+.payment-error-title
+{
+	display:none;
+        font-weight:bold;
+        color:red;
 }
 
 .error
@@ -110,9 +123,37 @@ td
 	border-color:red;
 }
 
+.payment-error,
 #error_list
 {
 	color:red;
+}
+
+.clear {
+       clear:both;
+}
+
+.input_box {
+	   float:left;
+           margin-right:20px;
+}
+
+.input_exp {
+           float:left;
+           margin-right:0px;
+}
+
+
+.input_last {
+	    foat:left;
+}
+
+input, label {
+           display:block;	
+}
+
+.card-expiry-month, card-expiry-year {
+	    display:inline;
 }
 
 #heading 
