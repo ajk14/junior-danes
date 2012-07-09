@@ -23,6 +23,9 @@ class Registration(models.Model):
     emergencyName = models.CharField(max_length=200)
     relationship = models.CharField(max_length=100)
 
+    def __unicode__(self):
+        return u'%s %s' % (self.firstName, self.lastName)
+
 class RegistrationForm(ModelForm):
     class Meta:
         model = Registration
@@ -66,6 +69,9 @@ class ShowcaseRegistration(models.Model):
     dates = models.IntegerField()
     school = models.CharField(max_length=100)
     gradYear = models.CharField(max_length=4)
+
+    def __unicode__(self):
+        return u'%s %s'% (self.firstName, self.lastName)
 
 class ShowcaseRegistrationForm(ModelForm):
     class Meta:
