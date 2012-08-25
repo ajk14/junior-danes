@@ -9,7 +9,7 @@ EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # Django settings for danes project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (

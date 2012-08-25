@@ -23,6 +23,10 @@ def showcases(request):
     context = {}
     return render_to_response("showcases.html", context)
 
+def reg_closed(request):
+    context = {}
+    return render_to_response("reg_closed.html", context)
+
 def showregister(request):
     context = {}
     context['invalid'] = False
