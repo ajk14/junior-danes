@@ -10,7 +10,7 @@ If the below information is incorrect, please contact our office at (518)442-333
 
 ------------------CAMP DATES------------------
 
-August {{dates}}, 2012, 11AM
+October {{dates}}, 2012, 11AM
 
 
 -----------------CAMPER INFO------------------
@@ -57,7 +57,7 @@ Relationship: {{relationship}}
 
 ---------------------------------------------
 
-We look forward to seeing you on August {{dates}} at 11AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+We look forward to seeing you on {{dates}} at 11AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
 
 
 
