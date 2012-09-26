@@ -41,8 +41,7 @@ def showregister(request):
             stripe.api_key = os.environ['STRIPE_SECRET']
             try:
                 charge = stripe.Charge.create(
-#                    amount=12500, # amount in cents                              
-                    amount=200, # amount in cents                              
+                    amount=12500, # amount in cents                              
                     currency="usd",
                     card=token,
                     description="Showcase Registration: " + request.POST['firstName']+ " " + request.POST['lastName']

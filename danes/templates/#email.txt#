@@ -2,15 +2,15 @@
 
 Hello,
 
-This message is to confirm the enrollment of {{firstName}} {{lastName}} in the upcoming UAlbany Baseball Prospect Showcase. Please bring a copy of this e-mail to the showcase.
+This message is to confirm the enrollment of {{firstName}} {{lastName}} in the Junior Danes Summer Baseball Camp.
 
-TOTAL COST: $125.00
+TOTAL COST: $200.00
 
 If the below information is incorrect, please contact our office at (518)442-3337. 
 
 ------------------CAMP DATES------------------
 
-October {{dates}}, 2012, 11AM
+July 16-20 (Ages 8-18), 9AM-1PM
 
 
 -----------------CAMPER INFO------------------
@@ -21,19 +21,7 @@ Address: {{address}}, {{city}}, {{state}}, {{zip}}
 
 Height: {{height}}
 
-Weight: {{weight}}
-
-Position(s): {{position}}
-
-Bats: {{bats}}
-
-Throws: {{throws}}
-
 Age: {{age}}
-
-School: {{school}}
-
-Graduation Year: {{gradYear}}
 
 
 -----------------PARENT INFO-----------------
@@ -57,7 +45,7 @@ Relationship: {{relationship}}
 
 ---------------------------------------------
 
-We look forward to seeing you on October {{dates}} at 11AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
+We look forward to seeing you on July 16 at 9AM! Please visit www.juniordanesbaseballacademy.com for more camp details.
 
 
 
