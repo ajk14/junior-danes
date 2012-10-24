@@ -48,6 +48,11 @@ a:active {color:black;}
 a.text{color:blue;
 	text-decoration:underline;}
 
+#standard {
+	  color:blue;
+	  text-decoration:underline;
+}
+
 table 
 {
 }
@@ -144,7 +149,6 @@ td
            margin-right:0px;
 }
 
-
 .input_last {
 	    foat:left;
 }
@@ -152,6 +156,11 @@ td
 input, label {
            display:block;	
 }
+
+input[type="radio"] {
+	    display:inline;
+}
+
 
 .card-expiry-month, card-expiry-year {
 	    display:inline;

@@ -1,5 +1,31 @@
 import os
 
+WINTER = {
+    'price': 199,
+    'description': "Winter 2012 Camp",
+    'subject': "UAlbany Baseball Winter Camp Registration",
+    'email_template':"winter_email.txt",
+    'success_url':"winter_success.html",
+    'base_url': "winterform.html",
+}
+
+SHOWCASE = {
+    'price': 125,
+    'description': "October 2012 Showcase",
+    'subject': "UAlbany Baseball Prospect Showcase Registration Confirmation",
+    'email_template':"showcase_email.txt",
+    'success_url':"showcase_success.html",
+    'base_url': "showform.html",
+}
+
+CLINIC = {
+    'description': "Winter 2012 Defense Clinic",
+    'subject': "UAlbany Baseball Clinic Registration Confirmation",
+    'email_template':"clinic_email.txt",
+    'success_url':"clinic_success.html",
+    'base_url': "clinicform.html",
+}
+
 EMAIL_HOST_USER = os.environ['SENDGRID_USER']
 EMAIL_HOST= 'smtp.sendgrid.net'
 EMAIL_PORT = 587

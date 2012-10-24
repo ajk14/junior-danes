@@ -1,20 +1,66 @@
 {% extends "base.html" %}
 
-{% block title %}UAlbany Baseball Prospect Showcase Registration{% endblock %}
+{% block title %}UAlbany Baseball Clinic Registration{% endblock %}
 
 {% block main %}
 <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/stripeHandler.js"></script>
+<script type="text/javascript" src="/static/js/formVis.js"></script>
 
-   <h2>UAlbany Baseball Prospect Showcase Registration</h2>
+   <h2>UAlbany Baseball Clinic Registration</h2>
    <div>If you would rather pay by check, please fill out <a class="text" href="/static/img/showcase_form.pdf">this form</a> and mail it to our office. </div>
 
    <form action="" method="POST" id="payment-form">
      
-     <h3>Showcase Date</h3>
-     <div>October 28, 2012</div>
-     </select>
+     <h3>Clinic Dates</h3>
+     <div>12/2, 12/9, 12/23, 12/30, 1/13, 1/20</div>
+     
+     <h3>Clinic Program</h3>
+     {% if invalid %}
+     <div class="error">Please correct the following error(s) (your card has not
+       been charged):</div>
+     <div id="error_list">
+       {% if registration_form.program.errors %}
+       <li>Please Select a Program.</li>
+       {% endif %}
+     </div>
+     {% endif %}
+     <div class="radio_list">
+        {{ registration_form.program }}
+	</div>
+
+     <div id="hitting">
+       <h3>Hitting Clinic Time</h3>
+       {% if invalid %}
+       <div class="error">Please correct the following error(s) (your card has not
+	 been charged):</div>
+       <div id="error_list">
+	 {% if registration_form.program.errors %}
+	 <li>Please Select a Hitting Clinic Time.</li>
+	 {% endif %}
+       </div>
+       {% endif %}
+       <div class="radio_list">
+         {{ registration_form.hit_time }}
+       </div>
+     </div>
+
+     <div id="defense">
+       <h3>Defense/Pitching Clinic Time</h3>
+       {% if invalid %}
+       <div class="error">Please correct the following error(s) (your card has not
+	 been charged):</div>
+       <div id="error_list">
+	 {% if registration_form.program.errors %}
+	 <li>Please Select a Defense/Pitching Clinic Time.</li>
+	 {% endif %}
+       </div>
+       {% endif %}
+       <div class="radio_list">
+        {{ registration_form.field_time }}
+       </div>
+     </div>
 
      <h3>Player Info</h3>
      {% csrf_token %}     
@@ -45,17 +91,8 @@
        {% if registration_form.height.errors %}
        <li>Height is invalid or missing.</li>
        {% endif %}
-       {% if registration_form.weight.errors %}
-       <li>Weight is invalid or missing.</li>
-       {% endif %}
        {% if registration_form.position.errors %}
        <li>Position is invalid or missing.</li>
-       {% endif %}
-       {% if registration_form.school.errors %}
-       <li>School is invalid or missing.</li>
-       {% endif %}
-       {% if registration_form.gradYear.errors %}
-       <li>Graduation Year is invalid or missing.</li>
        {% endif %}
 </div>
 </br>
@@ -103,43 +140,10 @@
         <label for="height">Height</label>
         {{ registration_form.height }}
     </div>
-    <div class="input_box">
-        <label for="weight">Weight</label>
-        {{ registration_form.weight }}
-    </div>
     <div class="input_last">
         <label for="position">Position(s)</label>
         {{ registration_form.position }}
     </div>
-
-    <br class="clear"/>
-    </section>
-
-    <section>
-    <div class="input_box">
-        <label for="school">School</label>
-        {{ registration_form.school }}
-    </div>
-    <div class="input_box">
-        <label for="gradYear">Graduation Year</label>
-        {{ registration_form.gradYear }}
-    </div>
-    <div class="input_box">
-        <label for="bats">Bats</label>
-	<select name="bats">
-              <option value="Right">Right</option>
-	      <option value="Left">Left</option>
-	      <option value="Switch">Switch</option>
-	</select>
-    </div>
-    <div class="input_last">
-        <label for="throws">Throws</label>
-        <select name="throws">
-	  <option value="Right">Right</option>
-	  <option value="Left">Left</option>
-	</select>
-    </div>
-    
     <br class="clear"/>
     </section>
 
@@ -255,7 +259,8 @@
 
 	  </br>
 	  <h3>Cost</h3>
-	  <label>Total: $125.00</label>
+	  <INPUT type="hidden" value=""  name="price"/>
+	  <label id="price_field">Total: $249.00 </label> 
 	  </br>
 	  <button type="submit" class="submit-button">Submit Payment</button>
 	</form>
