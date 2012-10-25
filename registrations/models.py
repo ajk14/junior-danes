@@ -45,7 +45,7 @@ class Registration(models.Model):
         return u'%s %s'% (self.firstName, self.lastName)
 
 CHOICES = (('hit', 'Hitting Only ($189)'), ('def', 'Defense/Pitching Only ($189)'), ('both', 'Hitting and Defense/Pitching ($249)'))
-HIT_TIME = (('4-5 PM', '4-5 PM'), ('5-6 PM', '5-6 PM'), ('6-7 PM', '6-7 PM'))
+HIT_TIME = (('6-7 PM', '6-7 PM'),)
 FIELD_TIME = (('7-8 PM', '7-8 PM'),)
 
 class RegistrationForm(ModelForm):
